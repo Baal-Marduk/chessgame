@@ -11,11 +11,10 @@ public abstract class Piece {
     private Plateau plateau;
 
 
-    public Piece(int x, int y, boolean couleur, Plateau plateau) {
+    public Piece(int x, int y, boolean couleur) {
         setX(x);
         setY(y);
         setCouleur(couleur);
-        this.plateau = plateau;
     }
 
     public String getPieceType() {
@@ -50,7 +49,7 @@ public abstract class Piece {
         return couleur;
     }
 
-    public abstract boolean move();
+    public abstract int [][] move();
 
 
 }

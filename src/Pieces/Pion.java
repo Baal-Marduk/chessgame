@@ -4,8 +4,13 @@ import Game.*;
 
 
 public class Pion extends Piece {
-    public Pion(int x, int y, boolean couleur, Plateau plateau) {
-        super(x, y, couleur, plateau);
+    private boolean haveMoved;
+
+
+    public Pion(int x, int y, boolean couleur) {
+        super(x, y, couleur);
+        haveMoved = false;
+        this.setPieceType("pion");
     }
 
     @Override
@@ -14,7 +19,21 @@ public class Pion extends Piece {
     }
 
     @Override
-    public boolean move() {
-        return false;
+    public int[][] move() {
+
+
+        if (haveMoved) {
+
+            int[][] possibleMoves = new int[][]{{0, 1}};
+
+            return possibleMoves;
+
+
+        } else {
+            int[][] possibleMoves = new int[][]{{0, 2}};
+
+            return possibleMoves;
+        }
+
     }
 }

@@ -44,32 +44,38 @@ public class Plateau {
     private void generationPlateau() {
         for (int i = 0; i < 8; i++) {
 
-            ((Tiles) lignes.get(1).get(i)).setPiece(new Pion(1, i, false, this));
-            ((Tiles) lignes.get(6).get(i)).setPiece(new Pion(6, i, true, this));
+            ((Tiles) lignes.get(1).get(i)).setPiece(new Pion(1, i, false));
+            ((Tiles) lignes.get(6).get(i)).setPiece(new Pion(6, i, true));
         }
-        ((Tiles) lignes.get(0).get(0)).setPiece(new Tour(0, 0, false, this));
-        ((Tiles) lignes.get(0).get(1)).setPiece(new Cavalier(0, 1, false, this));
-        ((Tiles) lignes.get(0).get(2)).setPiece(new Fou(0, 2, false, this));
-        ((Tiles) lignes.get(0).get(3)).setPiece(new Reine(0, 3, false, this));
-        ((Tiles) lignes.get(0).get(4)).setPiece(new Roi(0, 4, false, this));
-        ((Tiles) lignes.get(0).get(5)).setPiece(new Fou(0, 5, false, this));
-        ((Tiles) lignes.get(0).get(6)).setPiece(new Cavalier(0, 6, false, this));
-        ((Tiles) lignes.get(0).get(7)).setPiece(new Tour(0, 7, false, this));
+        ((Tiles) lignes.get(0).get(0)).setPiece(new Tour(0, 0, false));
+        ((Tiles) lignes.get(0).get(1)).setPiece(new Cavalier(0, 1, false));
+        ((Tiles) lignes.get(0).get(2)).setPiece(new Fou(0, 2, false));
+        ((Tiles) lignes.get(0).get(3)).setPiece(new Reine(0, 3, false));
+        ((Tiles) lignes.get(0).get(4)).setPiece(new Roi(0, 4, false));
+        ((Tiles) lignes.get(0).get(5)).setPiece(new Fou(0, 5, false));
+        ((Tiles) lignes.get(0).get(6)).setPiece(new Cavalier(0, 6, false));
+        ((Tiles) lignes.get(0).get(7)).setPiece(new Tour(0, 7, false));
 
-        ((Tiles) lignes.get(7).get(0)).setPiece(new Tour(7, 0, true, this));
-        ((Tiles) lignes.get(7).get(1)).setPiece(new Cavalier(7, 1, true, this));
-        ((Tiles) lignes.get(7).get(2)).setPiece(new Fou(7, 2, true, this));
-        ((Tiles) lignes.get(7).get(3)).setPiece(new Reine(7, 3, true, this));
-        ((Tiles) lignes.get(7).get(4)).setPiece(new Roi(7, 4, true, this));
-        ((Tiles) lignes.get(7).get(5)).setPiece(new Fou(7, 5, true, this));
-        ((Tiles) lignes.get(7).get(6)).setPiece(new Cavalier(7, 6, true, this));
-        ((Tiles) lignes.get(7).get(7)).setPiece(new Tour(7, 7, true, this));
+        ((Tiles) lignes.get(7).get(0)).setPiece(new Tour(7, 0, true));
+        ((Tiles) lignes.get(7).get(1)).setPiece(new Cavalier(7, 1, true));
+        ((Tiles) lignes.get(7).get(2)).setPiece(new Fou(7, 2, true));
+        ((Tiles) lignes.get(7).get(3)).setPiece(new Reine(7, 3, true));
+        ((Tiles) lignes.get(7).get(4)).setPiece(new Roi(7, 4, true));
+        ((Tiles) lignes.get(7).get(5)).setPiece(new Fou(7, 5, true));
+        ((Tiles) lignes.get(7).get(6)).setPiece(new Cavalier(7, 6, true));
+        ((Tiles) lignes.get(7).get(7)).setPiece(new Tour(7, 7, true));
 
 
     }
 
     public ArrayList<ArrayList> getLignes() {
         return lignes;
+    }
+
+    public Piece getPieceFromPosition(int x, int y){
+        Piece piece = ((Tiles) lignes.get(x).get(y)).getPiece();
+
+        return piece;
     }
 }
 //String.split to char array

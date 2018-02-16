@@ -6,9 +6,12 @@ import Game.*;
 public class Tour extends Piece {
 
 
-    public Tour(int x, int y, boolean couleur, Plateau plateau) {
-        super(x, y, couleur, plateau);
+    public Tour(int x, int y, boolean couleur ) {
+        super(x, y, couleur);
+        this.setPieceType("tour");
+
     }
+
 
     @Override
     public String toString() {
@@ -17,9 +20,15 @@ public class Tour extends Piece {
     }
 
     @Override
-    public boolean move() {
+    public int[][] move() {
+
+        int[][] possibleMoves = new int[][]{
+                {0,8},
+                {8,0}
+        };
+
+        return possibleMoves;
 
 
-        return false;
     }
 }

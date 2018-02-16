@@ -4,15 +4,14 @@ import Game.*;
 
 
 public class Cavalier extends Piece {
-    public Cavalier(int x, int y, boolean couleur, Plateau plateau) {
-        super(x, y, couleur, plateau);
+    public Cavalier(int x, int y, boolean couleur) {
+        super(x, y, couleur);
+        this.setPieceType("cavalier");
     }
 
-
-
     @Override
-    public boolean move() {
-        return false;
+    public int[][] move() {
+        return new int[0][];
     }
 
     @Override

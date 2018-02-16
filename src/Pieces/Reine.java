@@ -9,14 +9,20 @@ public class Reine extends Piece {
         return "D";
     }
 
-    public Reine(int x, int y, boolean couleur, Plateau plateau) {
-        super(x, y, couleur, plateau);
+    public Reine(int x, int y, boolean couleur) {
+        super(x, y, couleur);
+        this.setPieceType("reine");
     }
 
-
-
     @Override
-    public boolean move() {
-        return false;
+    public int[][] move() {
+        int[][] possibleMoves = new int[][]{
+                {0,8},
+                {8,0},
+                {8,8}
+        };
+
+        return possibleMoves;
+
     }
 }
