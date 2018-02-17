@@ -51,5 +51,9 @@ public abstract class Piece {
 
     public abstract int [][] move();
 
+    public String printAllData(){
+        return("Type : " + this.pieceType + " Couleur :" + this.couleur + " X : " + this.x + " Y : " + this.y);
+    }
+
 
 }

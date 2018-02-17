@@ -1,6 +1,6 @@
 package Game;
 
-public class Launcher {
+public class Launcher2 {
     public static void main(String[] args){
 //        Plateau plateau = new Plateau();
 //        System.out.println(plateau.toString());
@@ -11,11 +11,11 @@ public class Launcher {
         Moteur moteur = new Moteur();
 
         System.out.println(moteur.getPlateau().toString());
-        System.out.println(moteur.checkMove(6,0,5,0));
-        System.out.println(moteur.checkMove(7,2,4,5));
+        System.out.println(moteur.checkMove(6,0,6,1));
+        System.out.println(moteur.checkMove(7,2,4,1));
+        moteur.turn();
 
     }
 
 
 }
-//fdgdg

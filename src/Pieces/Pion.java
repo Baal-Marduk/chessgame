@@ -24,13 +24,13 @@ public class Pion extends Piece {
 
         if (haveMoved) {
 
-            int[][] possibleMoves = new int[][]{{0, 1}};
+            int[][] possibleMoves = new int[][]{{1, 0}};
 
             return possibleMoves;
 
 
         } else {
-            int[][] possibleMoves = new int[][]{{0, 2}};
+            int[][] possibleMoves = new int[][]{{2, 0}};
 
             return possibleMoves;
         }
