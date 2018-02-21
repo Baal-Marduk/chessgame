@@ -8,36 +8,45 @@ public class Moteur {
     private Plateau plateau;
     private boolean isWhiteTurn;
     public static boolean DEBUGMODE = true;
-
+    
+    //return le Plateau
     public Plateau getPlateau() {
         return plateau;
     }
-
+    
+    //Constructeur du moteur
+    //Initialisation du boolean isWhiteTurn qui va nous dire si c'est le tour des blancs ou des noirs
     public Moteur() {
         this.plateau = new Plateau();
         this.isWhiteTurn = true;
     }
-
+    
+    //Methode checkMove 
+    //Permet de verifier si les pieces peuvent se deplacer sur une case
+    //Verifie si des pieces se trouve sur son chemin
+    //Verifie la direction de la piece
+    //Verifie la couleur
     public boolean checkMove(int x1, int y1, int x2, int y2) {
         if (DEBUGMODE)
             System.out.println("CHECK MOVE STATUS :");
         Piece piece = plateau.getPieceFromPosition(x1, y1);
         if (piece == null) {
-            System.out.println("Pas de pièces à cette coordonées");
+            System.out.println("Pas de piece a cette coordonne");
             return false;
         }
         if (!(isWhiteTurn == piece.getCouleur())) {
-            System.out.println("Joue avec tes pions enculé !");
+            System.out.println("Ce n'est pas ton tour");
             return false;
         }
         boolean isReachable = false;
         int[] choosenDirection = null;
+        //On recupere la taille du tableau des move dispo
         for (int i = 0; i < piece.move().length; i++) {
             if (DEBUGMODE)
                 System.out.println("X2 - X1 :  " + Math.abs(x2 - x1) + " PIECE MOVE X : " + piece.move()[i][0] + " Y2 - Y1 " + Math.abs(y2 - y1) + " PIECE MOVE Y : " + piece.move()[i][1]);
 
             if ((Math.abs(x2 - x1) <= piece.move()[i][0]) && (Math.abs(y2 - y1) <= piece.move()[i][1])) {
-                if ((Math.abs(x2 - x1) != Math.abs(y2 - y1) && piece.getPieceType().equals("fou"))) // Si les valeurs différentielles ne sont pas les même alors ce n'est pas un déplacement en diagonale
+                if ((Math.abs(x2 - x1) != Math.abs(y2 - y1) && piece.getPieceType().equals("fou"))) // Si les valeurs diff�rentielles ne sont pas les m�me alors ce n'est pas un d�placement en diagonale
                     return false;
 
                 isReachable = true;
@@ -156,6 +165,8 @@ public class Moteur {
      * Est responsable de la gestion des tours
      * Attends les instructions passé en ligne de commande
      */
+    
+    
     public void turn() {
         Scanner scanner = new Scanner(System.in);
         String inputString = scanner.next();
